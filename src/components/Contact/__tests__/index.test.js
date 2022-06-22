@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Contact from './Contact';
+import Contact from '../../Contact';
 
 afterEach(cleanup);
 
@@ -12,6 +12,7 @@ describe('Contact component renders', () => {
 });
 
   
+// eslint-disable-next-line jest/no-identical-title
 it('renders', () => {
     const { asFragment } = render(<Contact />)
     expect(asFragment()).toMatchSnapshot()
@@ -24,6 +25,7 @@ it('renders', () => {
   expect(getByTestId('h1tag')).toHaveTextContent('Contact me')
 })
  
+// eslint-disable-next-line jest/no-identical-title
 it('renders', () => {
   const { getByTestId } = render(<Contact />)
   expect(getByTestId('button')).toHaveTextContent('Submit')
